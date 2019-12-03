@@ -1,0 +1,137 @@
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Button</title>
+	<link rel="stylesheet" type="text/css" href="app.css">
+	<link rel="icon" type="image/png" href="/apps/BtnCss/icon.png">
+</head>
+<!-- ==================================== -->
+<!-- body -->
+<!-- ==================================== -->
+<body><div class="mainDisplay">
+	<!-- ==================================== -->
+	<!-- htmlスタイル -->
+	<!-- ==================================== -->
+	<div>html{</div>
+		<div><span class="fixTxW">background: </span><span id="htmlBgComponent"></span>;</div>
+		<div><span class="fixTxW">color: </span><span id="htmlCoComponent"></span>;</div>
+		<div><span class="fixTxW">font-size: </span><span id="htmlFtSzComponent"></span>;</div>
+		<div><span class="fixTxW">font-family: </span><select id="htmlFtFamily"><option selected>sans-serif</option><option>serif</option><option>cursive</option><option>fantasy</option><option>monospace</option></select>;</div>
+	<div>}</div>
+	<hr>
+
+	<h1 id="debug">Button</h1>
+	<select id="selectBtnTag"><option value="a">&lt;a&gt;</option><option value="b" selected>&lt;button&gt;</option></select>
+	<input id="inputBtnText" value="カスタムボタン">
+	<div>
+		<a id="btnA" class="btn displayTag"></a>
+		<button id="btnB" class="btn displayTag"></button>
+	</div>
+	<!-- ==================================== -->
+	<!-- btnスタイル-->
+	<!-- ==================================== -->
+	<div><b>.btn {</b></div>
+	<div><label><span class="fixTxW">display:</span><select id="display"><!--改行文字削除-->
+			<option>inline</option><option>block</option><option selected>inline-block</option><option>inherit</option><option>none</option>
+			<!--<option>none</option><option>block</option><option>inline</option><option selected>inline-block</option><option>inherit</option><option>flex</option><option>inline-flex</option><option>run-in</option><option>list-item</option><option>grid</option><option>inline-grid</option><option>table</option><option>inline-table</option><option>table-row-group</option><option>table-header-group</option><option>table-footer-group</option><option>table-row</option><option>table-column-group</option><option>table-column</option><option>table-cell</option><option>table-caption</option><option>ruby</option><option>ruby-base</option><option>ruby-text</option><option>ruby-base-container</option><option>ruby-text-container</option>-->
+		</select>;</label>
+	</div>
+	<div><label><span class="fixTxW">width: </span><span id="widthComponent"></span>;</label></div>
+	<div><label><span class="fixTxW">height: </span><span id="heightComponent"></span>;</label></div>
+	<div>	<label><span class="fixTxW">font-size: </span><span id="fontSizeComponent"></span>;</label></div>
+	
+	<div><label><span class="fixTxW">font-weight:</span><select id="ftWeight"><!--改行文字削除-->
+			<option>100</option><option>normal</option><option selected>bold</option>
+			<!--<option>normal</option><option selected>bold</option><option>lighter</option><option>bolder</option><option>100</option><option>200</option><option>300</option><option>400</option><option>500</option><option>600</option><option>700</option><option>800</option><option>900</option>-->
+		</select>;</label>
+	</div>
+	<!-- <div id="expandMarginContainer"></div>
+	<div id="expandPaddingContainer"></div> -->
+	<div><a class="link" id="expandMargin">＋</a><label id="marginLabel"><span class="fixTxWp">margin: </span><input id="margin">;</label>
+		<div id="collapseMargin">
+			<div><label><span class="fixTxW">margin-top: </span><span id="marginTop"></span>;</label></div>
+			<div><label><span class="fixTxW">margin-right: </span><span id="marginRight"></span>;</label></div>
+			<div><label><span class="fixTxW">margin-bottom: </span><span id="marginBottom"></span>;</label></div>
+			<div><label><span class="fixTxW">margin-left: </span><span id="marginLeft"></span>;</label></div>	
+		</div>
+	</div>
+	<div><a class="link" id="expandPadding">＋</a><label id="paddingLabel"><span class="fixTxWp">padding: </span><input id="padding">;</label>
+		<div id="collapsePadding">
+			<div><label><span class="fixTxW">padding-top: </span><span id="paddingTop"></span>;</label></div>
+			<div><label><span class="fixTxW">padding-right: </span><span id="paddingRight"></span>;</label></div>
+			<div><label><span class="fixTxW">padding-bottom: </span><span id="paddingBottom"></span>;</label></div>
+			<div><label><span class="fixTxW">padding-left: </span><span id="paddingLeft"></span>;</label></div>	
+		</div>
+	<div><label><span class="fixTxW">color: </span><span id="colorComponent"></span>;</label></div>
+	<div><label><span class="fixTxW">background: </span><span id="backgroundCompornent"></span>;</label></div>
+	<div id="expandBorderContainer"></div>
+	<div><label><span class="fixTxW">border-radius: </span><span id="borderRadiusComponent"></span>;</label></div>
+	<div><label><span class="fixTxW">text-align: </span><select id="txAlign"><option>start</option><option>end</option><option>left</option><option>right</option><option selected>center</option><option>justify</option><option>justify-all</option><option>match-parent</option></select>;</label></div>
+	<div id="txDeco"><label><span class="fixTxW">text-decoration: </span><span id="textDecoComponent"></span>;</label>
+	</div>
+	<div><label><span class="fixTxW">outline: </span><span id="outlineComponent"></span>;</label></div>
+	<div><label><span class="fixTxW">cursor: </span>
+		<select id="cursor">
+			<option>auto</option><option>default</option><option selected>pointer</option><option>crosshair</option><option>move</option><option>text</option><option>wait</option><option>help</option><option>not-allowed</option>
+			<!--<option>auto</option><option>default</option><option selected>pointer</option><option>crosshair</option><option>move</option><option>text</option><option>wait</option><option>help</option><option>n-resize</option><option>s-resize</option><option>w-resize</option><option>e-resize</option><option>ne-resize</option><option>nw-resize</option><option>se-resize</option><option>sw-resize</option><option>progress</option><option>url</option><option>hand</option><option>no-drop</option><option>all-scroll</option><option>col-resize</option><option>row-resize</option><option>not-allowed</option><option>vertical-text</option>-->
+		</select></label>
+	</div>
+	<div><label><span class="fixTxW">transition: </span><input id="transition" type="number" min="0" step="0.1">s;</label></div>
+
+	<div><b>}</b></div>
+	<!-- ==================================== -->
+	<!-- btn:疑似要素 -->
+	<!-- ==================================== -->
+	<div><b>.btn:hover {</b></div>
+		<div><label><span class="fixTxW">color: </span><span id="hvCoComponent"></span>;</label></div>
+		<div><label><span class="fixTxW">background: </span><span id="hvBgComponent"></span>;</label></div>
+		<div><label><span class="fixTxW">border-top: </span><span id="hvBdTComponent"></span>;</label></div>
+		<div><label><span class="fixTxW">border-right: </span><span id="hvBdRComponent"></span>;</label></div>
+		<div><label><span class="fixTxW">border-bottom: </span><span id="hvBdBComponent"></span>;</label></div>
+		<div><label><span class="fixTxW">border-left: </span><span id="hvBdLComponent"></span>;</label></div>
+		<div><label><span class="fixTxW">margin: </span><input id="hvMar">;</label></div>
+		<div><label><span class="fixTxW">padding: </span><input id="hvPad">;</label></div>
+		<div><label><span class="fixTxW">transition: </span><input id="hvTrans" type="number" min="0" step="0.1">s;</label></div>
+	<div><b>}</b></div>
+	<div><b>.btn:active {</b></div>
+		<div><label><span class="fixTxW">color: </span><span id="actCoComponent"></span>;</label></div>
+		<div><label><span class="fixTxW">background: </span><span id="actBgComponent"></span>;</label></div>
+		<div><label><span class="fixTxW">border-top: </span><span id="actBdTComponent"></span>;</label></div>
+		<div><label><span class="fixTxW">border-right: </span><span id="actBdRComponent"></span>;</label></div>
+		<div><label><span class="fixTxW">border-bottom: </span><span id="actBdBComponent"></span>;</label></div>
+		<div><label><span class="fixTxW">border-left: </span><span id="actBdLComponent"></span>;</label></div>
+		<div><label><span class="fixTxW">margin: </span><input id="actMar">;</label></div>
+		<div><label><span class="fixTxW">padding: </span><input id="actPad">;</label></div>
+		<div><label><span class="fixTxW">transition: </span><input id="actTrans" type="number" min="0" step="0.1">s;</label></div>
+	<div><b>}</b></div>
+	<div><b>.btn:hover:before {</b></div>
+		<div><label><span class="fixTxW">content: "</span><input id="hvBfCnte">";</label></div>
+	<div><b>}</b></div>
+	<div><b>.btn:hover:after {</b></div>
+		<div><label><span class="fixTxW">content: "</span><input id="hvAfCnte">";</label></div>
+	<div><b>}</b></div>
+	<div><b>.btn:active:before {</b></div>
+		<div><label><span class="fixTxW">content: "</span><input id="actBfCnte">";</label></div>
+	<div><b>}</b></div>
+	<div><b>.btn:active:after {</b></div>
+		<div><label><span class="fixTxW">content: "</span><input id="actAfCnte">";</label></div>
+	<div><b>}</b></div>
+	<!-- ==================================== -->
+	<!-- footer -->
+	<!-- ==================================== -->
+	<div class="footer">.footer{
+		<div><span class="fixTxW">position: </span><select id="position"><option>static</option><option>relative</option><option>absolute</option><option selected>fixed</option></select></div>
+		<div><span class="fixTxW">bottom: </span><span id="bottomComponent"></span>;</div>
+		<div><span class="fixTxW">right: </span><span id="rightComponent"></span>;</div>
+		<div><span class="fixTxW">opacity: </span><input id="opacity" type="number" min="0" max="1" step="0.1" value="0.5">;</div>
+		<div><span class="fixTxW">width: </span><span id="footWComponent"></span>;</div>
+		<div>}</div>
+		<a id="btnN" href="#" class="btn displayTag"></a>
+		<button id="btnM" href="#" class="btn displayTag"></a>	
+	</div>
+
+</div><!-- end mainDisplay -->
+<script src="./include.js"></script>
+<script src="./build/bundle.js"></script>
+<script src="./css.js"></script>
+</body><!-- end body -->

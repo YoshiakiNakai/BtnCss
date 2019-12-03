@@ -1,0 +1,375 @@
+@charset 'UTF-8';
+
+:root {
+	/* ================================= */
+	/* html */
+	/* ================================= */
+	--htmlFtSz: 16px;		/* Viewを初期値とする */
+	--htmlBg: #bbdf24;
+	--htmlCo: #000000f0;
+	--htmlFtFamily: sans-serif;
+	/* ================================= */
+	/* btn */
+	/* ================================= */
+	--display: inline-block;	/* cssが初期表示、html初期値と非連動 */
+	--position: fixed;			/* cssが初期表示、html初期値と非連動 */
+
+	--width: auto;
+	--height: auto;
+
+	--background: #7a9605;
+	--color: #ffffffef;
+
+	--ftSize: 0;			/* Viewを初期値とする */
+
+	--margin: 0.75px 1px;	/* widthComponent系は、reactが初期値 */
+	--marginTop: 0; --marginRight: 0; --marginBottom: 0; --marginLeft: 0;
+	--padding: .5em 1em;
+	--paddingTop: 0; --paddingRight: 0; --paddingBottom: 0; --paddingLeft: 0;
+
+	--txAlign: center;	/* cssが初期表示、html初期値と非連動 */
+	--ftWeight: bold;		/* cssが初期表示、html初期値と非連動 */
+
+	--outline: none;	/* 単位px固定 */
+	--outlineStyle: none;	--outlineWidth: 3px;	--outlineColor: #dddd00;
+
+	--txDeco: none;
+	--txDecoLine: none;	--txDecoStyle: solid;	--txDecoColor: #00dddd;
+
+	--cursor: pointer;	/* cssが初期表示、html初期値と非連動 */
+	--transition: 0.2s;
+
+	/* border */				/* 単位px固定 */
+	--bdRadius: 6px;
+	--borderStyle: solid;		--borderWidth: 3px;	--borderColor: #000000;
+	--bdTopStyle: none;		--bdTopWidth: 3px;	--bdTopColor: #ee0000;
+	--bdRightStyle: none;	--bdRightWidth: 3px;	--bdRightColor: #00ee00;
+	--bdBottomStyle: solid;	--bdBottomWidth: 4px;--bdBottomColor: #000000c0;
+	--bdLeftStyle: none;		--bdLeftWidth: 3px;	--bdLeftColor: #0000ee;
+	--border: none;
+	--bdTop: none;
+	--bdRight: none;
+	--bdBottom: none;
+	--bdLeft: none;
+
+	/* 表示するタグ切り替え用 */
+	--tagA: none;	/* css初期値、html初期値と非同期 */
+	--tagB: var(--display);
+
+	/* footer */
+	--position: fixed;
+	--bottom: 5px;
+	--right: 5px;
+	--opacity: 0.5;
+	--footW: 50%;
+	/* ================================= */
+	/* 疑似 */
+	/* ================================= */
+	/* hover */
+	--hvBg: #dbf764;
+	--hvCo: #000000f0;
+	--hvBdTStyle: solid;	--hvBdTWidth: 1px;	--hvBdTColor: #00000020;
+	--hvBdRStyle: solid;	--hvBdRWidth: 1px;	--hvBdRColor: #00000020;
+	--hvBdBStyle: solid;	--hvBdBWidth: 4px;	--hvBdBColor: #000000a0;
+	--hvBdLStyle: solid;	--hvBdLWidth: 1px;	--hvBdLColor: #00000020;
+	--hvBdT: none;
+	--hvBdR: none;
+	--hvBdB: none;
+	--hvBdL: none;
+	--hvW: auto;
+	--hvH: auto;
+	--hvMar: 0;
+	--hvPad: 0.5em 1em;
+	--hvTrans: .4s;
+	/* active */
+	--actBg: #7a9605;
+	--actCo: #ffffffef;
+	--actBdTStyle: solid;--actBdTWidth: 1px;	--actBdTColor: #000000a0;
+	--actBdRStyle: none;	--actBdRWidth: 3px;	--actBdRColor: #000000f0;
+	--actBdBStyle: none;	--actBdBWidth: 3px;	--actBdBColor: #000000f0;
+	--actBdLStyle: none;	--actBdLWidth: 3px;	--actBdLColor: #000000f0;
+	--actBdT: none;
+	--actBdR: none;
+	--actBdB: none;
+	--actBdL: none;
+	--actMar: 5px 0 0 0;
+	--actPad: 0.5em 1em;
+	--actTrans: 0.1s;
+	/* 疑似要素 */
+	--hvBfCnte: "";
+	--hvAfCnte: " | push me!";
+	--actBfCnte: "Thanks! | ";
+	--actAfCnte: "";
+}
+/* ==================================== */
+a.displayTag{
+	display: var(--tagA);
+}
+button.displayTag{
+	display: var(--tagB);
+}
+.btn.bd{
+	border-top: var(--bdTop);
+	border-right: var(--bdRight);
+	border-bottom: var(--bdBottom);
+	border-left: var(--bdLeft);
+}
+.btn.mar{
+	margin-top: var(--marginTop);
+	margin-right: var(--marginRight);
+	margin-bottom: var(--marginBottom);
+	margin-left: var(--marginLeft);
+}
+.btn.pad{
+	padding-top: var(--paddingTop);
+	padding-right: var(--paddingRight);
+	padding-bottom: var(--paddingBottom);
+	padding-left: var(--paddingLeft);
+}
+.btn{
+	/* position: var(--position); top, right, bottom, leftで位置指定できるようになる */
+	display: var(--display);
+
+	font-size: var(--ftSize);
+	font-weight: var(--ftWeight);
+
+	width: var(--width);
+	height: var(--height);
+
+	background: var(--background);
+	color: var(--color);
+
+	margin: var(--margin);
+	padding: var(--padding);
+
+	border: var(--border);
+	border-radius: var(--bdRadius);
+
+	text-decoration: var(--txDeco);
+	text-align: var(--txAlign);
+
+	cursor: var(--cursor);
+	outline: var(--outline);
+	transition: var(--transition);
+}
+.btn:hover{
+	color: var(--hvCo);
+	background: var(--hvBg);
+	border-top: var(--hvBdT);
+	border-right: var(--hvBdR);
+	border-bottom: var(--hvBdB);
+	border-left: var(--hvBdL);
+	margin: var(--hvMar);
+	padding: var(--hvPad);
+	transition: var(--hvTrans);
+}
+.btn:active{
+	color: var(--actCo);
+	background: var(--actBg);
+	border-top: var(--actBdT);
+	border-right: var(--actBdR);
+	border-bottom: var(--actBdB);
+	border-left: var(--actBdL);
+	border-left: var(--hvBdL);
+	margin: var(--actMar);
+	padding: var(--actPad);
+	transition: var(--actTrans);
+}
+.btn:hover:before{
+	content: var(--hvBfCnte);
+}
+.btn:hover:after{
+	content: var(--hvAfCnte);
+}
+.btn:active:before{
+	content: var(--actBfCnte);
+}
+.btn:active:after{
+	content: var(--actAfCnte);
+}
+
+.colorComponent{
+	width: 7em;
+}
+/* ===================================================== */
+/* css設定 */
+/* ===================================================== */
+/* 画面サイズが768px以下で適用 */
+/* @media screen and (max-width: 768px) {} */
+/* 基本設定 */
+html {
+	font-size: var(--htmlFtSz);
+	color: var(--htmlCo);
+	font-family: var(--htmlFtFamily); 
+	touch-action: manipulation;
+	background: var(--htmlBg);
+}
+table {
+	margin: 0 auto;
+}
+/* tableラベル列 */
+td:first-child {
+	text-align: right;
+}/* 画面サイズが小さいとき、テーブル行を改行可能にする */
+@media screen and (max-width: 600px) {
+	td{ display: inline-block;}
+}
+th, tfoot{
+	text-align: left;
+}
+input {
+	/*box-sizing: border-box;*/
+	font-family: inherit;
+	display: inline-block;
+	width: auto;
+	height: 1.6em;
+	font-size: 100%;
+	padding: .3em .3em;
+	margin: 2px 0;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	filter:alpha(opacity=90); -moz-opacity: 0.9; opacity: 0.9;
+}
+input[type="color"]{
+	width: 1.2em;
+	background: white;
+	padding: 0;
+}
+input[type="number"]{
+	width: 4em;
+}
+select {
+	font-family: inherit;
+	display: inline-block;
+	width: auto;
+	height: 1.5em;
+	font-size: 98%;
+	border: 1px solid #bbb;
+	border-radius: 2px;
+	filter:alpha(opacity=95); -moz-opacity: 0.95; opacity: 0.95;
+}
+label{
+	font-weight: bold;
+}
+/* スマホ画面風の設定 */
+.smartPhone {
+  padding: 10px;
+  margin: 0 auto;
+  text-align: center;
+}
+.mainDisplay {
+	padding: 10px;
+	margin: 0 auto;
+	text-align: left;
+ }
+ .footer{
+	width: var(--footW);
+	position: var(--position);
+	bottom: var(--bottom);
+	right: var(--right);
+	filter:alpha(opacity=calc(var(--opacity) * 100));
+	-moz-opacity: var(--opacity);
+	opacity: var(--opacity);
+}
+.fixTxW{
+	text-align: right;
+	display: inline-block;
+	width: 30%;
+}
+.fixTxWp{
+	text-align: right;
+	display: inline-block;
+	width: calc(30% - 1em);
+}
+@media screen and (max-width: 600px) {
+	.fixTxW, .fixTxWp{
+		text-align: left;
+		display: inline-block;
+		width: calc(100% - 1em);
+	}
+}
+
+/* ==================================== */
+
+/* 主軸：縦方向のflexコンテナ */
+.flexCol {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-content: flex-start;
+	align-items: stretch;
+}
+/* 主軸：横方向のflexコンテナ */
+.flexRow {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-content: flex-start;
+	align-items: stretch;
+}
+
+/* 選択不可、イベント透過 */
+.selectNone {
+	pointer-events: none;
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer */
+	-khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+	-webkit-user-select: none; /* Chrome, Safari, and Opera */
+	-webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+}
+/* 要素の中央寄せ */
+.center {
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+/* リンク装飾の無効化 */
+.linkNone{
+	text-decoration: none;
+	color: inherit;
+}
+/* hrefなしでリンク風にする */
+.link {
+	cursor: pointer;
+}
+/* ボタンを装飾なしのリンク風にする */
+.btnLink{
+	font-size: inherit;
+	cursor: pointer;
+	background: inherit;
+	border: none;
+	outline: none;
+}
+.padRL0 {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+/* 無効表現 */
+.invalid{
+	text-decoration: line-through;
+	font-weight: normal;
+}
+
+
+/* ==================================== */
+
+.red {
+	background-color: #f22;
+	color: #fff;
+}
+.lime {
+	background-color: #1d1;
+	color: #fff;
+}
+.blue {
+	background-color: #11f;
+	color: #fff; 
+}
+.grayout {
+	background-color: #ddd;
+	color: #aaa; 
+}
+/* ==================================== */
